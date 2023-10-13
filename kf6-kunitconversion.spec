@@ -1,6 +1,6 @@
 %define libname %mklibname KF6UnitConversion
 %define devname %mklibname KF6UnitConversion -d
-%define git 20231011
+%define git 20231014
 
 Name: kf6-kunitconversion
 Version: 5.240.0
