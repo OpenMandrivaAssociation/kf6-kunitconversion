@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-kunitconversion
-Version: 6.10.0
+Version: 6.11.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kunitconversion/-/archive/master/kunitconversion-master.tar.bz2#/kunitconversion-%{git}.tar.bz2
@@ -20,6 +20,7 @@ Group: System/Libraries
 BuildRequires: cmake
 BuildRequires: cmake(ECM)
 BuildRequires: python
+BuildRequires: python%{pyver}dist(build)
 BuildRequires: cmake(Qt6DBusTools)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Network)
@@ -84,3 +85,4 @@ Library for converting physical units
 
 %files -n %{libname}
 %{_libdir}/libKF6UnitConversion.so*
+%{_libdir}/python*/site-packages/KUnitConversion.cpython-*.so
