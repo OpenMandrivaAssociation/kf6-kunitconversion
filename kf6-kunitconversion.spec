@@ -21,6 +21,9 @@ BuildRequires: cmake
 BuildRequires: cmake(ECM)
 BuildRequires: python
 BuildRequires: python%{pyver}dist(build)
+BuildRequires: pkgconfig(python3)
+BuildRequires: cmake(Shiboken6)
+BuildRequires: cmake(PySide6)
 BuildRequires: cmake(Qt6DBusTools)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Network)
@@ -59,6 +62,14 @@ Development files (Headers etc.) for %{name}.
 
 Library for converting physical units
 
+%package -n python-kunitconversion
+Summary: Python bindings to KUnitConversion
+Group: Development/Python
+Requires: %{libname} = %{EVRD}
+
+%description -n python-kunitconversion
+Python bindings to KUnitConversion
+
 %prep
 %autosetup -p1 -n kunitconversion-%{?git:master}%{!?git:%{version}}
 %cmake \
@@ -85,4 +96,6 @@ Library for converting physical units
 
 %files -n %{libname}
 %{_libdir}/libKF6UnitConversion.so*
+
+%files -n python-kunitconversion
 %{_libdir}/python*/site-packages/KUnitConversion.cpython-*.so
