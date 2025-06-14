@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-kunitconversion
-Version: 6.14.0
+Version: 6.15.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kunitconversion/-/archive/master/kunitconversion-master.tar.bz2#/kunitconversion-%{git}.tar.bz2
@@ -92,7 +92,6 @@ Python bindings to KUnitConversion
 %files -n %{devname}
 %{_includedir}/KF6/KUnitConversion
 %{_libdir}/cmake/KF6UnitConversion
-%{_qtdir}/doc/KF6UnitConversion.*
 
 %files -n %{libname}
 %{_libdir}/libKF6UnitConversion.so*
