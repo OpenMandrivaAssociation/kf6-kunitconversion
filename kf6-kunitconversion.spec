@@ -6,8 +6,8 @@
 #define git 20240217
 
 Name: kf6-kunitconversion
-Version: 6.20.0
-Release: %{?git:0.%{git}.}2
+Version: 6.21.0
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kunitconversion/-/archive/master/kunitconversion-master.tar.bz2#/kunitconversion-%{git}.tar.bz2
 %else
