@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-kunitconversion
-Version: 6.27.0
+Version: 6.28.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kunitconversion/-/archive/master/kunitconversion-master.tar.bz2#/kunitconversion-%{git}.tar.bz2
@@ -71,7 +71,7 @@ Requires: %{libname} = %{EVRD}
 Python bindings to KUnitConversion
 
 %prep
-%autosetup -p1 -n kunitconversion-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n kunitconversion-6.28.0
 %cmake \
 	-DBUILD_QCH:BOOL=ON \
 	-DBUILD_WITH_QT6:BOOL=ON \
