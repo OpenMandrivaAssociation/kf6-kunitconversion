@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-kunitconversion
-Version: 6.28.0
+Version: 6.29.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kunitconversion/-/archive/master/kunitconversion-master.tar.bz2#/kunitconversion-%{git}.tar.bz2
@@ -40,6 +40,8 @@ BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: cmake(KF6I18n)
 Requires: %{libname} = %{EVRD}
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
 
 %description
 Library for converting physical units
@@ -69,22 +71,6 @@ Requires: %{libname} = %{EVRD}
 
 %description -n python-kunitconversion
 Python bindings to KUnitConversion
-
-%prep
-%autosetup -p1 -n kunitconversion-6.28.0
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
-%find_lang %{name} --all-name --with-qt --with-html
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kunitconversion.*
